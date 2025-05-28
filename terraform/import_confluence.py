@@ -335,7 +335,7 @@ def main():
             sys.exit(1)
         
         # Get space content
-        content_url = f"{confluence_url}/rest/api/space/{space_key}/content?limit=100"
+        content_url = f"{confluence_url}/rest/api/space/{space_key}/content?limit=500"
         content_result = make_request(content_url)
         
         if "error" in content_result:
