@@ -216,7 +216,7 @@ def test_confluence_connection():
         server_url = get_confluence_url()
         
         # Try to access a simple endpoint
-        test_url = f"{server_url}/rest/api/space?limit=1"
+        test_url = f"{server_url}/wiki/rest/api/space?limit=1"
         logger.info(f"Testing connection to: {test_url}")
         
         # Make the test request
@@ -351,7 +351,7 @@ def main():
                 page_id = page.get("id")
                 if page_id:
                     # Get page content
-                    page_url = f"{confluence_url}/rest/api/content/{page_id}?expand=body.storage,metadata.labels"
+                    page_url = f"{confluence_url}/wiki/rest/api/content/{page_id}?expand=body.storage,metadata.labels"
                     page_data = make_request(page_url)
                     
                     if "error" not in page_data:
@@ -385,7 +385,7 @@ def main():
                 blog_id = blog.get("id")
                 if blog_id:
                     # Get blog content
-                    blog_url = f"{confluence_url}/rest/api/content/{blog_id}?expand=body.storage,metadata.labels"
+                    blog_url = f"{confluence_url}/wiki/rest/api/content/{blog_id}?expand=body.storage,metadata.labels"
                     blog_data = make_request(blog_url)
                     
                     if "error" not in blog_data:
